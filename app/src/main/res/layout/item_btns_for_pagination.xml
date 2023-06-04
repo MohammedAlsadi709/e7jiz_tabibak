@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="35dp"
+    android:id="@+id/item"
+    android:layout_marginTop="3dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"
+    android:backgroundTint="@color/primaryColor"
+    android:background="@drawable/round_rectangel_card"
+    android:layout_height="40dp">
+
+    <TextView
+        style="@style/SelectableItemBackground"
+        android:id="@+id/itemButton"
+        android:layout_width="match_parent"
+        android:text="3"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

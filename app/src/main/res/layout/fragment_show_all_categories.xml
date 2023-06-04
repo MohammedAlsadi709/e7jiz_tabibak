@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ShowAllCategoriesFragment">
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/rvCategories"
+       />
+
+   <TextView
+       android:id="@+id/layoutEmpty"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:text="لا يوجد اقسام!!"
+       android:textColor="@color/primaryColor"
+       android:textSize="25sp"
+       android:visibility="gone"
+       app:drawableTopCompat="@drawable/ic_empty"
+       app:drawableTint="@color/primaryColor"
+       tools:ignore="HardcodedText" />
+
+</FrameLayout>

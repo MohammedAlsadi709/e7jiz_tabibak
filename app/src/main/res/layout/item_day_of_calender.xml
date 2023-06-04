@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:id="@+id/parentLayoutItem"
+    android:backgroundTint="@color/backgroundColor"
+    android:background="@drawable/round_rectangel_card"
+    android:layout_height="80dp">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:id="@+id/item"
+       style="@style/SelectableItemBackground"
+       android:layout_height="match_parent">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Mon"
+           android:lines="1"
+           android:ellipsize="end"
+           android:textColor="@color/BlackText"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:textStyle="bold"
+           app:layout_constraintBottom_toTopOf="@id/dayDate"
+           android:id="@+id/dayName"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="21"
+           android:textStyle="bold"
+           android:textColor="@color/BlackText"
+           app:layout_constraintTop_toBottomOf="@id/dayName"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           android:id="@+id/dayDate"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

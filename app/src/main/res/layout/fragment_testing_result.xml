@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded"
+    tools:context=".fragments.doctorFragments.TestingResultFragment">
+
+
+      <LinearLayout
+          android:id="@+id/linear"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:orientation="vertical">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:text="اضافة ملاحظات"
+              android:textSize="16sp"
+              android:textStyle="bold" />
+
+          <EditText
+              android:id="@+id/txtDoctorNotice"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:lines="4"
+              style="@style/PnuFont"
+              android:textColor="@color/grayText"
+              android:textColorHint="@color/grayText"
+              android:hint="اضف ملاحظاتك هنا"
+              android:padding="10dp"
+              android:textSize="14sp"
+              android:gravity="top|right"
+              android:layout_marginTop="10dp"
+              android:background="@drawable/reg_input_border"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              />
+
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:id="@+id/linear2"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/linear"
+          app:layout_constraintBottom_toTopOf="@id/layoutBtns"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginTop="10dp"
+          android:orientation="vertical"
+    >
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:text="الأدوية الموصى بها"
+              android:textSize="16sp"
+              android:textStyle="bold" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_weight="1"
+             android:id="@+id/rvAddMedicine"/>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:layout_marginTop="10dp"
+              android:id="@+id/btnAddNewCard"
+              android:padding="10dp"
+              android:textColor="@color/BlackText"
+              android:text="اضافة دواء اخر"
+              android:drawablePadding="5dp"
+              android:drawableRight="@mipmap/add_blue_cyrcle"
+              android:textSize="14sp" />
+
+      </LinearLayout>
+
+      <FrameLayout
+          android:id="@+id/layoutBtns"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginBottom="16dp"
+          android:layout_marginTop="16dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginEnd="16dp"
+          android:background="@drawable/reg_btns_border"
+          android:backgroundTint="@color/primaryColor">
+
+          <Button
+              android:id="@+id/btnSend"
+              style="@style/SelectableItemBackground"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:padding="12dp"
+              android:text="ارسال"
+              android:textColor="@color/white"
+              android:textSize="14sp"
+              android:textStyle="bold" />
+      </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

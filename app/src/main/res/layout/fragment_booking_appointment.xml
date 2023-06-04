@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="RtlHardcoded"
+    tools:context=".fragments.BookingAppointmentFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgDoctor"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent"
+            android:src="@mipmap/rated_doctor_item" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtDoctorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="الدكتور خالد عبد الله"
+        android:textSize="16sp"
+        android:gravity="right"
+        app:layout_constraintBottom_toTopOf="@id/txtDoctorTitle"
+        app:layout_constraintLeft_toRightOf="@id/txtPrice"
+        app:layout_constraintRight_toLeftOf="@id/cardImage"
+      app:layout_constraintTop_toTopOf="@id/cardImage"
+      />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="$50"
+        android:textColor="@color/primaryColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/txtDoctorName"
+        app:layout_constraintTop_toTopOf="@id/cardImage" />
+
+    <TextView
+        android:id="@+id/txtDoctorTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:textSize="12sp"
+        android:text="دكتور أسنان - عيادة أسناني"
+        android:textColor="@color/grayText"
+        app:layout_constraintLeft_toRightOf="@id/txtPrice"
+        app:layout_constraintRight_toLeftOf="@id/cardImage"
+        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+        app:layout_constraintTop_toBottomOf="@id/txtDoctorName" />
+
+    <TextView
+        android:id="@+id/txtD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="اليوم"
+        android:textColor="@color/BlackText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardImage" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="10dp"
+        style="@style/SelectableItemBackground"
+        android:src="@mipmap/back_small_blue"
+        android:id="@+id/btnNext"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toTopOf="@id/txtMonthAndYear"
+        app:layout_constraintBottom_toBottomOf="@id/txtMonthAndYear"
+        app:layout_constraintRight_toLeftOf="@id/txtMonthAndYear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:tint="@color/grayIcons" />
+
+    <TextView
+        android:id="@+id/txtMonthAndYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="April 2020"
+        android:textColor="@color/BlackText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/txtD"
+    app:layout_constraintLeft_toRightOf="@id/btnNext"
+        app:layout_constraintTop_toTopOf="@id/txtD"
+       />
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="10dp"
+        style="@style/SelectableItemBackground"
+        android:src="@mipmap/forward_small_blue"
+        android:id="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/txtMonthAndYear"
+        app:layout_constraintLeft_toRightOf="@id/txtMonthAndYear"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/txtMonthAndYear"
+        app:tint="@color/grayIcons" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintTop_toBottomOf="@id/txtD"
+        android:layout_marginTop="16dp"
+        android:id="@+id/rvCalenderDays"
+        tools:ignore="RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/txtT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="الساعة"
+        android:textColor="@color/BlackText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCalenderDays" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/layoutRv"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="190dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rvTimes" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/layoutEmpty"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_empty"
+                app:tint="@color/primaryColor" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/primaryColor"
+                android:text="لا توجد أوقات عمل في هذا اليوم"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutRv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/reg_btns_border"
+        android:backgroundTint="@color/primaryColor">
+
+        <Button
+            android:id="@+id/btnTakeTime"
+            style="@style/SelectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="احجز الآن"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

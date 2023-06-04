@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryColor"
+    android:orientation="vertical"
+    android:paddingTop="32dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تقييم الطبيب"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/dialogRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:rating="0"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:progressTint="#FFC700"
+            />
+        <EditText
+            android:id="@+id/txtComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="4"
+            style="@style/PnuFont"
+            android:textColor="@color/grayText"
+            android:textColorHint="@color/grayText"
+            android:hint="اضف تعليقك هنا"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:gravity="top|right"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/reg_input_border"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <FrameLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="42dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/reg_btns_border"
+            android:backgroundTint="@color/primaryColor">
+
+            <Button
+                android:id="@+id/btnSend"
+                style="@style/SelectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="ارسال"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded"
+    tools:context=".fragments.doctorFragments.BookingCancelFragment">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="ادخل سبب الغاء الحجز"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtCauseToCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="8"
+            style="@style/PnuFont"
+            android:textColor="@color/grayText"
+            android:textColorHint="@color/grayText"
+            android:hint="ادخل سبب الالغاء"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:maxLength="100"
+            android:gravity="top|right"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/reg_input_border"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+             />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtInputTextCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="0/100"
+        android:textColor="@color/grayText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="left"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        android:textSize="14sp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtInputTextCount"
+        android:layout_marginRight="16dp"
+        android:text="تم تغير المريض"
+        style="@style/PnuFont"
+        android:button="@drawable/my_checkbox_shape"
+        android:id="@+id/cbIsAttended"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/reg_btns_border"
+        android:backgroundTint="@color/primaryColor">
+
+        <Button
+            android:id="@+id/btnSend"
+            style="@style/SelectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="ارسال"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.DoctorsOfCategoryFragment">
+
+  <!--  <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/backgroundColor"
+        android:background="@drawable/round_rectangel_card"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/PnuFont"
+            android:textSize="14sp"
+            android:textColor="@color/BlackText"
+            android:text="ترتيب حسب"
+            android:id="@+id/txt"
+            app:layout_constraintLeft_toRightOf="@id/txtFilterDepentOn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/PnuFont"
+            android:textSize="14sp"
+            android:textColor="@color/BlackText"
+            android:text="الأقرب لموقعي"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/txtFilterDepentOn"
+            android:drawablePadding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:drawableTint="@color/grayIcons"
+            app:drawableLeftCompat="@mipmap/down_small_blue"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/rvAllDoctors"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primaryColor"
+            android:text="لا يوجد أطباء بعد!!"
+            app:drawableTopCompat="@drawable/ic_empty"
+            android:textSize="25sp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/layoutEmpty"
+            app:drawableTint="@color/primaryColor" />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryColor"
+    android:orientation="vertical"
+    android:paddingTop="32dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تغيير حجم خطوط التطبيق"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtMainTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="العناوين الرئيسية"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txt1" />
+
+        <TextView
+            android:id="@+id/txtSubTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="العناوين الفرعية"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtMainTitles" />
+
+        <TextView
+            android:id="@+id/txtParagraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="نصوص الفقرات"
+            android:textColor="@color/BlackText"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/txtSubTitles" />
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+            android:value="18.0"
+            android:stepSize="3"
+            android:valueFrom="12.0"
+            android:valueTo="27.0"
+            app:haloColor="@color/primaryColor"
+            app:layout_constraintTop_toBottomOf="@id/txtParagraph"
+            app:thumbColor="@color/primaryColor"
+            app:trackColorActive="@color/primaryColor"
+            app:trackColorInactive="@color/primaryColorWithAlpha"
+            app:trackHeight="10dp" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            style="@style/SelectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:text="حسناً"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sliderRange"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            style="@style/SelectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="إلغاء"
+            app:layout_constraintBottom_toBottomOf="@id/btnDone"
+            app:layout_constraintLeft_toRightOf="@id/btnDone"
+            app:layout_constraintTop_toTopOf="@id/btnDone" />
+
+        <TextView
+            android:id="@+id/btnReset"
+            style="@style/SelectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="استعادة الحجم الافتراضي"
+            app:layout_constraintBottom_toBottomOf="@id/btnDone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnDone" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

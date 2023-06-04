@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/reg_input_border"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/no_gray"
+                android:id="@+id/btnClose"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:text="اسم الدواء"
+            android:textColor="@color/grayText"/>
+
+
+       <LinearLayout
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/txtMedicineName"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:textSize="12sp"
+               android:layout_marginTop="5dp"
+               android:gravity="right"
+               android:background="@drawable/white_input_border"
+               android:padding="16dp"
+               android:text="لم يتم التحديد"
+               android:textColor="@color/BlackText"
+               android:drawableTint="@color/grayIcons"
+               app:drawableLeftCompat="@mipmap/down_small_blue" />
+           <TextView
+               android:layout_width="3dp"
+               android:layout_height="3dp"
+               android:id="@+id/txtMedicineId"
+               android:visibility="invisible"
+               android:text="0" />
+       </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:text="عدد الحبات"
+            android:textColor="@color/grayText"/>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtMedicineUsesPerTime"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:background="@drawable/white_input_border"
+                android:padding="16dp"
+                android:text="لم يتم التحديد"
+                android:textColor="@color/BlackText"
+                android:drawableTint="@color/grayIcons"
+                app:drawableLeftCompat="@mipmap/down_small_blue" />
+            <TextView
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:id="@+id/txtPeriodId"
+                android:visibility="invisible"
+                android:text="0" />
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:text="عدد الأيام"
+            android:textColor="@color/grayText"/>
+
+
+        <EditText
+            android:id="@+id/txtMedicineDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:background="@drawable/white_input_border"
+            android:padding="16dp"
+            android:hint="لم يتم التحديد"
+            android:inputType="number"
+            style="@style/PnuFont"
+            android:textColor="@color/BlackText"
+            app:drawableTint="@color/grayIcons" />
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

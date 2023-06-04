@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:backgroundTint="@color/primaryColor"
+    android:background="@drawable/rounded_layout"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDayName"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="اليوم" />
+</LinearLayout>

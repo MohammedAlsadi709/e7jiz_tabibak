@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.doctorFragments.IncomingDoctorBookingFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/rvHeaderDays"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rvHeaderDays"
+        android:text="حجوزات اليوم"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/BlackText"
+        android:id="@+id/txtBookingDay"
+        android:textStyle="bold"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الاحد 14 ابريل 2022"
+        android:layout_marginRight="16dp"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/grayText"
+        app:layout_constraintTop_toTopOf="@id/txtBookingDay"
+        app:layout_constraintBottom_toBottomOf="@id/txtBookingDay"
+        android:id="@+id/txtFullDateForBookingDay"
+        />
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       app:layout_constraintTop_toBottomOf="@id/txtBookingDay"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginTop="16dp"
+       android:layout_height="0dp">
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+          android:id="@+id/rvIncomingBookings"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/primaryColor"
+           android:text="لا توجد حجوزات قادمة بعد!!"
+           app:drawableTopCompat="@drawable/ic_empty"
+           android:textSize="25sp"
+           android:layout_gravity="center"
+           android:visibility="gone"
+           android:gravity="center"
+           android:id="@+id/layoutEmpty"
+           app:drawableTint="@color/primaryColor" />
+
+   </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

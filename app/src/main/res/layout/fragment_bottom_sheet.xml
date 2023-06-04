@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_round_top"
+    tools:context=".fragments.BottomSheetFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/slider"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded">
+
+        <EditText
+            android:id="@+id/txtSearch"
+            style="@style/PnuFont"
+            android:background="@drawable/round_rectangel_card"
+            android:backgroundTint="@color/backgroundColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/search_gray"
+            android:drawablePadding="5dp"
+            android:hint="ابحث عن اطباء او عيادات"
+            android:inputType="text"
+            android:gravity="right"
+            android:padding="15dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnDone"
+            android:textColor="@color/BlackText"
+            android:textColorHint="@color/BlackText" />
+
+        <ImageView
+            android:src="@mipmap/yes_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginRight="16dp"
+            style="@style/SelectableItemBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtSearch"
+            app:layout_constraintBottom_toBottomOf="@id/txtSearch"
+            android:id="@+id/btnDone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="16dp"
+           android:id="@+id/rvMedicines"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="19sp"
+           android:layout_margin="16dp"
+           android:gravity="center"
+           android:visibility="gone"
+           android:textColor="@color/primaryColor"
+           android:id="@+id/txtEmptyItems"
+           android:text="لم يتم العثور على نتائج، يمكنك اضافة الدواء المناسب ان تطلب الأمر"/>
+
+   </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnAddNewMedicine"
+        android:padding="16dp"
+        style="@style/SelectableItemBackground"
+        android:textColor="@color/BlackText"
+        android:text="أضف دواء جديد إلى القائمة من هنا"
+        android:drawablePadding="5dp"
+        android:textSize="14sp"
+        app:drawableRightCompat="@mipmap/add_blue_cyrcle" />
+
+
+</LinearLayout>

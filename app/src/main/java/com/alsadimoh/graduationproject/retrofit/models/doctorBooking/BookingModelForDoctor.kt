@@ -1,0 +1,3 @@
+package com.alsadimoh.graduationproject.retrofit.models.doctorBooking
+
+data class BookingModelForDoctor(val id:Int, val user_id:Int, val doctor_id:Int, val date:String, val time:String, val price:Double, val doctor_notes:String, val status:String,val total_booking_count:Int,val attending_count:Int,val inattending_count:Int,val cancel_with_doctor_accept:Int,val medicines:List<IncomingBookingMedicineModel> ,val editable :Boolean?,val is_valid:Boolean, val deleted_at:String?, val user:UserInDoctorBookingModel)

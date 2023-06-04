@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/notificationsFragment"
+    android:icon="@mipmap/alert_gray"
+    app:showAsAction="always"
+    android:title="Notifications"
+    />
+
+    <item android:id="@+id/emptyItem"
+        android:icon="@mipmap/alert_gray"
+        app:showAsAction="always"
+        android:title="Notifications"
+        />
+
+    <item android:id="@+id/saveAsFavorite"
+        app:showAsAction="always"
+        android:icon="@mipmap/bookmark_gray"
+        android:title="حفظ في المفضلة"/>
+
+    <item android:id="@+id/settingsFragments"
+        app:showAsAction="always"
+        android:icon="@mipmap/settings_gray"
+        android:title="حفظ في المفضلة"/>
+
+</menu>

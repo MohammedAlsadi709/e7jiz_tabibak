@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.UserProfileFragment"
+    tools:ignore="RtlHardcoded">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+            android:id="@+id/layoutContent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toTopOf="@id/txtDoctorName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgDoctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/rated_doctor_item" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtDoctorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="الدكتور احمد ابو سعدة"
+                android:textColor="@color/BlackText"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/txtPhoneNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardImage" />
+
+            <TextView
+                android:id="@+id/txtPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="+972592203022"
+                android:textColor="@color/BlackText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/layout1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDoctorName" />
+
+
+            <FrameLayout
+                android:id="@+id/layout1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/reg_btns_border"
+                android:backgroundTint="@color/primaryColor"
+                app:layout_constraintHorizontal_weight="1.5"
+                app:layout_constraintLeft_toRightOf="@id/layout2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPhoneNumber">
+
+                <Button
+                    android:id="@+id/btnTakeTimeAgain"
+                    style="@style/SelectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="حجز موعد جديد"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/layout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/reg_btns_border"
+                app:layout_constraintBottom_toBottomOf="@id/layout1"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/layout1"
+                app:layout_constraintTop_toTopOf="@id/layout1">
+
+                <Button
+                    android:id="@+id/btnEditProfile"
+                    style="@style/SelectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="تعديل البروفايل"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/btnFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:drawablePadding="10dp"
+                android:padding="17dp"
+                android:text="العناصر المحفوظة"
+                app:drawableLeftCompat="@mipmap/back_small_blue"
+                app:drawableRightCompat="@mipmap/bookmark_gray"
+                app:drawableTint="@color/grayIcons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout1" />
+
+            <TextView
+                android:id="@+id/btnHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:drawablePadding="10dp"
+                android:padding="17dp"
+                android:text="المساعدة"
+                app:drawableLeftCompat="@mipmap/back_small_blue"
+                app:drawableRightCompat="@mipmap/web_gray"
+                app:drawableTint="@color/grayIcons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnFavorite" />
+
+            <TextView
+                android:id="@+id/btnAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:drawablePadding="10dp"
+                android:padding="17dp"
+                android:text="عن التطبيق"
+                app:drawableLeftCompat="@mipmap/back_small_blue"
+                app:drawableRightCompat="@mipmap/help_gray"
+                app:drawableTint="@color/grayIcons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnHelp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutEmpty"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryColor"
+                android:text="حدث خطأ ما اعد المحاولة لاحقاً!!"
+                app:drawableTopCompat="@drawable/ic_empty"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:drawableTint="@color/primaryColor" />
+        </FrameLayout>
+    </FrameLayout>
+
+
+</ScrollView>

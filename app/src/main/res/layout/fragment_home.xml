@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/layoutContent"
+        android:visibility="invisible"
+        android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_rectangel_card"
+        android:backgroundTint="@color/backgroundColor"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/slider"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:id="@+id/txtSearch"
+            style="@style/PnuFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_rectangel_card"
+            android:drawableRight="@mipmap/search_gray"
+            android:drawablePadding="5dp"
+            android:hint="ابحث عن اطباء او عيادات"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/BlackText"
+            android:textColorHint="@color/BlackText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnFilter"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/filter_gray"
+            app:layout_constraintBottom_toBottomOf="@id/txtSearch"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txtSearch"
+            app:layout_constraintTop_toTopOf="@id/txtSearch"
+            app:layout_constraintVertical_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- slider library version   0.0.6-->
+    <!--  <com.denzcoskun.imageslider.ImageSlider
+          android:id="@+id/slider"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:auto_cycle="true"
+          app:delay="0"
+          app:layout_constraintVertical_weight="1"
+          app:error_image="@drawable/slider_not_shown_placeholder"
+          app:layout_constraintBottom_toTopOf="@id/txtC"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/layoutSearch"
+          app:period="3000"
+          app:placeholder="@drawable/slider_not_shown_placeholder"
+          app:selected_dot="@mipmap/select_dot"
+          app:unselected_dot="@mipmap/unselect_dot" />-->
+
+    <!-- slider library version   0.1.0-->
+    <!-- attributes       app:iss_....-->
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:iss_auto_cycle="true"
+        app:layout_constraintVertical_weight="1.2"
+        app:iss_delay="0"
+        app:iss_error_image="@drawable/slider_not_shown_placeholder"
+        app:iss_indicator_align="@string/left"
+        app:iss_period="2300"
+        app:iss_placeholder="@drawable/slider_not_shown_placeholder"
+        app:iss_selected_dot="@mipmap/select_dot"
+        app:iss_unselected_dot="@mipmap/unselect_dot"
+        app:layout_constraintBottom_toTopOf="@id/txtC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch"
+       />
+
+
+    <TextView
+        android:id="@+id/txtC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="التخصصات"
+        android:textColor="@color/BlackText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rvCategories"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider" />
+
+    <TextView
+        android:id="@+id/btnShowAllCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="عرض الكل"
+        android:textColor="@color/primaryColor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtC"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtC" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategories"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/txtR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtC" />
+
+
+    <TextView
+        android:id="@+id/txtR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="الأعلى تقييماً"
+        android:textColor="@color/BlackText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rvMostRating"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCategories" />
+
+    <TextView
+        android:id="@+id/btnShowAllTheMostRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="عرض الكل"
+        android:textColor="@color/primaryColor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtR"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtR" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMostRating"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtR"
+        app:layout_constraintVertical_weight="2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutNoItems"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        >
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="حدث خطأ ما اعد المحاولة لاحقاً!!"
+            android:textColor="@color/primaryColor"
+            android:textSize="25sp"
+            android:visibility="visible"
+            app:drawableTopCompat="@drawable/ic_empty"
+            app:drawableTint="@color/primaryColor"
+            tools:ignore="HardcodedText" />
+    </FrameLayout>
+</FrameLayout>

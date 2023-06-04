@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingStart="16dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="16dp"
+    tools:ignore="RtlHardcoded"
+    android:paddingBottom="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/round_rectangel_card_for_item_review_booking"
+        android:backgroundTint="@color/backgroundColor">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layoutRoundedImg"
+            android:layout_width="40dp"
+            android:layout_marginRight="3dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutTexts"
+            app:layout_constraintLeft_toRightOf="@id/layoutTexts"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutTexts">
+
+            <ImageView
+                android:id="@+id/imgItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/rated_doctor_item"
+                tools:ignore="ContentDescription" />
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/layoutTexts"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/layoutBtns"
+            app:layout_constraintRight_toLeftOf="@id/layoutRoundedImg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:lines="1"
+                android:text="الدكتور احمد مصطفى"
+                android:textColor="@color/BlackText"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+
+            <TextView
+                android:id="@+id/txtCreateAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:gravity="right"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="الأحد 20 ابريل 2022"
+                android:textColor="@color/grayText"
+                android:textSize="12sp"
+               tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/txtCreateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:gravity="right"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="6:00 - 9:00"
+                android:textColor="@color/grayText"
+                android:textSize="12sp"
+               tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutBtns"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutTexts"
+            app:layout_constraintRight_toLeftOf="@id/layoutTexts"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@id/layoutTexts"
+            android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/layoutAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/reg_btns_border"
+                    android:backgroundTint="@color/primaryColor">
+
+                    <Button
+                        android:id="@+id/btnAccept"
+                        style="@style/SelectableItemBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="6dp"
+                        android:text="موافق"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <FrameLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/reg_btns_border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout1">
+
+                    <Button
+                        android:id="@+id/btnCancel"
+                        style="@style/SelectableItemBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"                        android:text="الغاء"
+                        android:textColor="@color/primaryColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

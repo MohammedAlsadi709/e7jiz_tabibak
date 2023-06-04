@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+    android:title="الرئيسية"
+    android:icon="@mipmap/options_blue"
+    android:iconTint="@color/grayIcons"
+    />
+
+    <item android:id="@+id/doctorHomeFragment"
+    android:title="الحجوزات"
+    android:icon="@mipmap/options_blue"
+    android:iconTint="@color/grayIcons"
+    />
+
+    <item android:id="@+id/reviewBookingRequestsForDoctor"
+        android:title="طلبات الحجوزات"
+        android:icon="@drawable/ic_add_booking_requests"
+        android:iconTint="@color/grayIcons"
+        />
+
+    <item android:id="@+id/myTimesFragment"
+        android:title="مواعيدي"
+        android:icon="@mipmap/calendar_blue"
+        android:iconTint="@color/grayIcons"
+        />
+
+    <item android:id="@+id/notificationsFragment"
+        android:title="الاشعارات"
+        android:icon="@mipmap/alert_blue"
+        android:iconTint="@color/grayIcons"
+        />
+
+    <item android:id="@+id/chattedUsersFragment"
+        android:title="الاستشارات"
+        android:icon="@mipmap/messages_blue"
+        android:iconTint="@color/grayIcons"
+       />
+
+    <item android:id="@+id/userProfileFragment"
+        android:title="الملف الشخصي"
+        android:icon="@mipmap/profile_blue"
+        android:iconTint="@color/grayIcons"
+        />
+
+    <item android:id="@+id/doctorProfileForDoctorUserFragment"
+        android:title="الملف الشخصي"
+        android:icon="@mipmap/profile_blue"
+        android:iconTint="@color/grayIcons"
+        />
+
+    <item android:id="@+id/settingsFragments"
+        android:title="الاعدادات"
+        android:icon="@mipmap/settings_blue"
+        android:iconTint="@color/grayIcons"
+        />
+
+       <item android:id="@+id/logoutItem"
+           android:title="تسجيل الخروج"
+           android:icon="@mipmap/lock_blue"
+           android:iconTint="@color/grayIcons"
+           />
+
+</menu>

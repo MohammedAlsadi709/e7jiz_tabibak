@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="الاستشارات"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loggingTypeFragment"
+            app:destination="@id/loggingTypeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_doctorHomeFragment"
+            app:destination="@id/doctorHomeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_welcomePageFragmentForStartUp"
+            app:destination="@id/welcomePageFragmentForStartUp"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/loggingTypeFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.OnBoardingFragment"
+        android:label="fragment_logging_type"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_loggingTypeFragment_to_signUpFirstFragment"
+            app:destination="@id/signUpFirstFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_loggingTypeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFirstFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.SignUpFirstFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_sign_up_first">
+        <action
+            android:id="@+id/action_signUpFirstFragment_to_phoneVerificationFragment"
+            app:destination="@id/phoneVerificationFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneVerificationFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.PhoneVerificationFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_phone_verification">
+        <action
+            android:id="@+id/action_phoneVerificationFragment_to_createPasswordFragment"
+            app:destination="@id/createPasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="regObj"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.auth.RegisterModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.CreatePasswordFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_create_password">
+        <action
+            android:id="@+id/action_createPasswordFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_createPasswordFragment_to_doctorHomeFragment"
+            app:destination="@id/doctorHomeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="registerObj"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.auth.RegisterModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.LoginFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFirstFragment"
+            app:destination="@id/signUpFirstFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_loginFragment_to_doctorHomeFragment"
+            app:destination="@id/doctorHomeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.ForgetPasswordFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_phoneVerificationForForgetPasswordFragment"
+            app:destination="@id/phoneVerificationForForgetPasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.HomeFragment"
+        android:label="الرئيسية"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_showAllCategoriesFragment"
+            app:destination="@id/showAllCategoriesFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctorProfileFragment"
+            app:destination="@id/doctorProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFilterFragment"
+            app:destination="@id/searchFilterFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctorsOfCategoryFragment"
+            app:destination="@id/doctorsOfCategoryFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_allRatedDoctorsFragment"
+            app:destination="@id/allRatedDoctorsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/showAllCategoriesFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.ShowAllCategoriesFragment"
+        android:label="التخصصات"
+        tools:layout="@layout/fragment_show_all_categories">
+        <action
+            android:id="@+id/action_showAllCategoriesFragment_to_doctorsOfCategoryFragment"
+            app:destination="@id/doctorsOfCategoryFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorsOfCategoryFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.DoctorsOfCategoryFragment"
+        android:label="{CategoryName}"
+        tools:layout="@layout/fragment_doctors_of_category">
+        <argument
+            android:name="CategoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_doctorsOfCategoryFragment_to_doctorProfileFragment"
+            app:destination="@id/doctorProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="categoryId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorProfileFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.DoctorProfileFragment"
+        android:label="بروفايل الطبيب {doctorName}"
+        tools:layout="@layout/fragment_doctor_profile">
+        <argument
+            android:name="doctorName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_doctorProfileFragment_to_bookingAppointmentFragment"
+            app:destination="@id/bookingAppointmentFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="doctorId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_doctorProfileFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_doctorProfileFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingAppointmentFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.BookingAppointmentFragment"
+        android:label="حجز موعد"
+        tools:layout="@layout/fragment_booking_appointment">
+        <action
+            android:id="@+id/action_bookingAppointmentFragment_to_bookingSuccessfullyFragment"
+            app:destination="@id/bookingSuccessfullyFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="doctor"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.userBooking.ProfileToBooking" />
+        <argument
+            android:name="is_from_edit"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="booking_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/myTimesFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.MyTimesFragment"
+        android:label="مواعيدي"
+        tools:layout="@layout/fragment_my_times" />
+    <action
+        android:id="@+id/action_global_myTimesFragment"
+        app:destination="@id/myTimesFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/incomingTimesFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.IncomingTimesFragment"
+        android:label="fragment_incoming_times"
+        tools:layout="@layout/fragment_incoming_times" />
+    <action
+        android:id="@+id/action_global_incomingTimesFragment"
+        app:destination="@id/incomingTimesFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/incomingAppointmentDetailsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.IncomingAppointmentDetailsFragment"
+        android:label="تفاصيل الموعد القادم"
+        tools:layout="@layout/fragment_incoming_appointment_details" >
+        <argument
+            android:name="booking_id"
+            app:argType="integer" />
+        <argument
+            android:name="isIncoming"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_incomingAppointmentDetailsFragment"
+        app:destination="@id/incomingAppointmentDetailsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/finishedTimesFragment2"
+        android:name="com.alsadimoh.graduationproject.fragments.FinishedTimesFragment"
+        android:label="fragment_finished_times"
+        tools:layout="@layout/fragment_finished_times" />
+    <action
+        android:id="@+id/action_global_finishedTimesFragment2"
+        app:destination="@id/finishedTimesFragment2"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/finishedAppointmentDetailsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.FinishedAppointmentDetailsFragment"
+        android:label="تفاصيل الموعد السابق"
+        tools:layout="@layout/fragment_finished_appointment_details" >
+        <argument
+            android:name="booking_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_finishedAppointmentDetailsFragment_to_bookingAppointmentFragment"
+            app:destination="@id/bookingAppointmentFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_finishedAppointmentDetailsFragment"
+        app:destination="@id/finishedAppointmentDetailsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/settingsFragments"
+        android:name="com.alsadimoh.graduationproject.fragments.SettingsFragments"
+        android:label="الاعدادات"
+        tools:layout="@layout/fragment_settings_fragments">
+        <action
+            android:id="@+id/action_settingsFragments_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_settingsFragments_self"
+            app:destination="@id/settingsFragments" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_settingsFragments"
+        app:destination="@id/settingsFragments"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.UserProfileFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_aboutAppFragment"
+            app:destination="@id/aboutAppFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_allRatedDoctorsFragment"
+            app:destination="@id/allRatedDoctorsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_userProfileFragment"
+        app:destination="@id/userProfileFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.AboutAppFragment"
+        android:label="عن التطبيق"
+        tools:layout="@layout/fragment_about_app" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.SearchFragment"
+        android:label="البحث"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_doctorProfileFragment"
+            app:destination="@id/doctorProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchFilterFragment"
+            app:destination="@id/searchFilterFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="data"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.userHome.DoctorModelForUserHome[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.NotificationsFragment"
+        android:label="التنبيهات"
+        tools:layout="@layout/fragment_notifications" />
+    <action
+        android:id="@+id/action_global_notificationsFragment"
+        app:destination="@id/notificationsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/searchFilterFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.SearchFilterFragment"
+        android:label="فلتر"
+        tools:layout="@layout/fragment_search_filter" >
+        <action
+            android:id="@+id/action_searchFilterFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingSuccessfullyFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.BookingSuccessfullyFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_booking_successfully" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.ChangePasswordFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_change_password" >
+        <argument
+            android:name="phone_number"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.EditProfileFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_edit_profile" >
+        <argument
+            android:name="model"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.userProfile.UpdateProfileModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorHomeFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.DoctorHomeFragment"
+        android:label="الحجوزات"
+        tools:layout="@layout/fragment_doctor_home" />
+    <fragment
+        android:id="@+id/finishedDoctorBookingFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.FinishedDoctorBookingFragment"
+        android:label="fragment_finished_doctor_booking"
+        tools:layout="@layout/fragment_finished_doctor_booking" />
+    <action
+        android:id="@+id/action_global_finishedDoctorBookingFragment"
+        app:destination="@id/finishedDoctorBookingFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/incommingDoctorBookingFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.IncomingDoctorBookingFragment"
+        android:label="fragment_incomming_doctor_booking"
+        tools:layout="@layout/fragment_incomming_doctor_booking" />
+    <action
+        android:id="@+id/action_global_incommingDoctorBookingFragment"
+        app:destination="@id/incommingDoctorBookingFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/bookingDetailsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.BookingDetailsFragment"
+        android:label="تفاصيل الحجز"
+        tools:layout="@layout/fragment_booking_details">
+        <action
+            android:id="@+id/action_bookingDetailsFragment_to_bookingCancelFragment"
+            app:destination="@id/bookingCancelFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_bookingDetailsFragment_to_testingResultFragment"
+            app:destination="@id/testingResultFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <argument
+            android:name="booking_id"
+            app:argType="integer" />
+        <argument
+            android:name="booking_type"
+            app:argType="string"
+            android:defaultValue="incoming" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_bookingDetailsFragment"
+        app:destination="@id/bookingDetailsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/bookingCancelFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.BookingCancelFragment"
+        android:label="الغاء الحجز"
+        tools:layout="@layout/fragment_booking_cancel" >
+        <argument
+            android:name="booking_id"
+            app:argType="integer" />
+        <argument
+            android:name="is_pop_to_doctor_home"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="isIncoming"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/testingResultFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.TestingResultFragment"
+        android:label="نتائج الفحص"
+        tools:layout="@layout/fragment_testing_result" >
+        <argument
+            android:name="booking_id"
+            app:argType="integer" />
+        <argument
+            android:name="isEdtting"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorProfileForDoctorUserFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.DoctorProfileForDoctorUserFragment"
+        android:label="الملف الشخصي"
+        tools:layout="@layout/fragment_doctor_profile_for_doctor_user">
+        <action
+            android:id="@+id/action_doctorProfileForDoctorUserFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_doctorProfileForDoctorUserFragment_to_editProfileForDoctor"
+            app:destination="@id/editProfileForDoctor"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_doctorProfileForDoctorUserFragment"
+        app:destination="@id/doctorProfileForDoctorUserFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.ReviewsFragment"
+        android:label="التقييمات"
+        tools:layout="@layout/fragment_reviews">
+        <argument
+            android:name="doctor_id"
+            app:argType="integer" />
+        <argument
+            android:name="is_user"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loggingTypeFragment2"
+        app:destination="@id/loggingTypeFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/chattedUsersFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.ChattedUsersFragment"
+        android:label="الاستشارات"
+        tools:layout="@layout/fragment_chatted_users">
+        <action
+            android:id="@+id/action_chattedUsersFragment_to_allAvailableDoctorsFragment"
+            app:destination="@id/allAvailableDoctorsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_chattedUsersFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_chattedUsersFragment"
+        app:destination="@id/chattedUsersFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/allAvailableDoctorsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.AllAvailableDoctorsFragment"
+        android:label="بدء استشارة جديدة"
+        tools:layout="@layout/fragment_all_available_doctors" >
+        <action
+            android:id="@+id/action_allAvailableDoctorsFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.ChatFragment"
+        android:label="{receiverName}"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="receiverName"
+            app:argType="string" />
+        <argument
+            android:name="receiverId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.FavoriteFragment"
+        android:label="العناصر المحفوظة"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_doctorProfileFragment"
+            app:destination="@id/doctorProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneVerificationForForgetPasswordFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.PhoneVerificationForForgetPasswordFragment"
+        android:label=" ">
+        <argument
+            android:name="phone_number"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_phoneVerificationForForgetPasswordFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/allRatedDoctorsFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.AllRatedDoctorsFragment"
+        android:label="الأعلى تقييماً"
+        tools:layout="@layout/fragment_all_rated_doctors">
+        <action
+            android:id="@+id/action_allRatedDoctorsFragment_to_doctorProfileFragment"
+            app:destination="@id/doctorProfileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewBookingRequestsForDoctor"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.ReviewBookingRequestsForDoctor"
+        android:label="طلبات الحجوزات"
+        tools:layout="@layout/fragment_review_booking_requests_for_doctor" >
+        <action
+            android:id="@+id/action_reviewBookingRequestsForDoctor_to_bookingCancelFragment"
+            app:destination="@id/bookingCancelFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_reviewBookingRequestsForDoctor"
+        app:destination="@id/reviewBookingRequestsForDoctor"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <fragment
+        android:id="@+id/welcomePageFragmentForStartUp"
+        android:name="com.alsadimoh.graduationproject.fragments.WelcomePageFragmentForStartUp"
+        android:label="fragment_welcome_page_for_start_up"
+        tools:layout="@layout/fragment_welcome_page_for_start_up" >
+        <argument
+            android:name="page_num"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_welcomePageFragmentForStartUp_self"
+            app:destination="@id/welcomePageFragmentForStartUp"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_welcomePageFragmentForStartUp_to_requestLocationPermissionFragment"
+            app:destination="@id/requestLocationPermissionFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestLocationPermissionFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.RequestLocationPermissionFragment"
+        android:label="fragment_request_location_permission"
+        tools:layout="@layout/fragment_request_location_permission" >
+        <action
+            android:id="@+id/action_requestLocationPermissionFragment_to_loggingTypeFragment"
+            app:destination="@id/loggingTypeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileForDoctor"
+        android:name="com.alsadimoh.graduationproject.fragments.doctorFragments.EditProfileForDoctor"
+        android:label="تعديل الملف الشخصي"
+        tools:layout="@layout/fragment_edit_profile_for_doctor">
+        <argument
+            android:name="model"
+            app:argType="com.alsadimoh.graduationproject.retrofit.models.doctorProfile.UpdateDoctorProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/pendingBookingsForUserFragment"
+        android:name="com.alsadimoh.graduationproject.fragments.PendingBookingsForUserFragment"
+        android:label="حجز موعد"
+        tools:layout="@layout/fragment_pending_bookings_for_user" />
+    <action
+        android:id="@+id/action_global_pendingBookingsForUserFragment"
+        app:destination="@id/pendingBookingsForUserFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+    <action
+        android:id="@+id/action_global_bookingAppointmentFragment"
+        app:destination="@id/bookingAppointmentFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right" />
+</navigation>

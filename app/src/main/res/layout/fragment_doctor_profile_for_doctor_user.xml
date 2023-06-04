@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.doctorFragments.DoctorProfileForDoctorUserFragment"
+    tools:ignore="RtlHardcoded">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/layoutContent"
+        android:visibility="invisible"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@id/txtDoctorName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/rated_doctor_item" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtDoctorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="الدكتور محمد صبحي"
+            android:textColor="@color/BlackText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/layoutRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardImage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@id/layout1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDoctorName">
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressTint="#FFC700"
+                android:rating="5.0"
+                app:layout_constraintLeft_toRightOf="@id/txtRatingStartsNumber"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtRatingStartsNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.0"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ratingBar"
+                app:layout_constraintLeft_toRightOf="@id/txtReviewNumber"
+                app:layout_constraintRight_toLeftOf="@id/ratingBar"
+                app:layout_constraintTop_toTopOf="@id/ratingBar" />
+
+            <TextView
+                android:id="@+id/txtReviewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="(26)"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/txtRatingStartsNumber"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/txtRatingStartsNumber"
+                app:layout_constraintTop_toTopOf="@id/txtRatingStartsNumber" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/layout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintHorizontal_weight="1.5"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/reg_btns_border"
+            android:backgroundTint="@color/primaryColor"
+            app:layout_constraintBottom_toTopOf="@id/layoutAbstract"
+            app:layout_constraintLeft_toRightOf="@id/layout2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutRating">
+
+            <Button
+                android:id="@+id/btnShowReviews"
+                style="@style/SelectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="عرض التقييمات"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/layout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintHorizontal_weight="1"
+
+            android:layout_marginRight="5dp"
+            android:background="@drawable/reg_btns_border"
+            app:layout_constraintBottom_toBottomOf="@id/layout1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/layout1"
+            app:layout_constraintTop_toTopOf="@id/layout1">
+
+            <Button
+                android:id="@+id/btnEditProfile"
+                style="@style/SelectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="تعديل البروفايل"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAbstract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangel_card"
+            android:backgroundTint="@color/backgroundColor"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/layoutConstraint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="نبذة تعريفية"
+                android:textColor="@color/grayText"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtAbstract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص  العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية النص لن يبدو مقسما ولا يحوي أخطاء لغوية"
+                android:textColor="@color/BlackText"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutConstraint"
+            app:layout_constraintTop_toBottomOf="@id/layoutAbstract"
+            android:layout_marginTop="10dp">
+
+
+            <LinearLayout
+                android:id="@+id/layoutPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintLeft_toRightOf="@id/layoutGender"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="رقم الهاتف"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="+9720597123548"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/layoutPhone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/layoutPhone"
+                app:layout_constraintTop_toTopOf="@id/layoutPhone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="جنس المريض"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ذكر"
+                    android:gravity="right"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintLeft_toLeftOf="@id/layoutPhone"
+                app:layout_constraintRight_toRightOf="@id/layoutPhone"
+                app:layout_constraintTop_toBottomOf="@id/layoutPhone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="اسم العيادة"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtClinicName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="عيادة اسناني"
+                    android:gravity="right"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintLeft_toLeftOf="@id/layoutGender"
+                app:layout_constraintRight_toRightOf="@id/layoutGender"
+                app:layout_constraintTop_toBottomOf="@id/layoutGender">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="التخصص"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtDomain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="دكتور اسنان"
+                    android:gravity="right"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/layout5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintLeft_toLeftOf="@id/layout3"
+                app:layout_constraintRight_toRightOf="@id/layout3"
+                app:layout_constraintTop_toBottomOf="@id/layout3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="سعر الكشفية"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="120 شيكل"
+                    android:gravity="right"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintLeft_toLeftOf="@id/layout4"
+                app:layout_constraintRight_toRightOf="@id/layout4"
+                app:layout_constraintTop_toBottomOf="@id/layout4">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="مدة الانتظار"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtWaitingDur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="50 دقيقة"
+                    android:gravity="right"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutWorkTimes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="أوقات العمل"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtWorkTimes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:text="من السبت إلى الاربعاء - من الساعة الثامنة صباحا حتى الثالثة مساء"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/round_rectangel_card"
+                android:backgroundTint="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutWorkTimes">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="الموقع"
+                    android:textColor="@color/grayText"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="right"
+                    android:text="فلسطين غزة  حي الرمال بالقرب من  مسجد الكنز"
+                    android:textColor="@color/BlackText"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <FrameLayout
+            android:id="@+id/layoutEmpty"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryColor"
+                android:text="حدث خطأ ما اعد المحاولة لاحقاً!!"
+                app:drawableTopCompat="@drawable/ic_empty"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:drawableTint="@color/primaryColor" />
+        </FrameLayout>
+    </FrameLayout>
+</ScrollView>

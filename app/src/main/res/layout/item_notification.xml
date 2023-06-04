@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:ignore="RtlHardcoded"
+    android:layout_marginTop="16dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/layoutIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="5dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/backgroundColor"
+        android:background="@drawable/round_rectangel_card">
+
+        <ImageView
+            android:id="@+id/imgNotificationIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/alert_blue" />
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="0dp"
+       app:layout_constraintLeft_toRightOf="@id/layoutTimes"
+       android:orientation="vertical"
+       android:layout_marginRight="16dp"
+android:id="@+id/layoutTexts"
+       app:layout_constraintTop_toTopOf="@id/layoutIcon"
+       app:layout_constraintBottom_toBottomOf="@id/layoutIcon"
+       app:layout_constraintRight_toLeftOf="@id/layoutIcon"
+       android:layout_height="wrap_content"
+  >
+       <TextView
+           android:id="@+id/txtNotificationTitle"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:textColor="@color/BlackText"
+           android:textSize="15sp"
+           android:text="تذكير"
+           android:gravity="right"
+           />
+
+       <TextView
+           android:id="@+id/txtNotificationDetails"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/BlackText"
+           android:textSize="12sp"
+           android:text="لقد حان وقت تناول العلاج"
+           android:gravity="right"
+           />
+   </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTimes"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/layoutTexts"
+        app:layout_constraintBottom_toBottomOf="@id/layoutTexts"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/layoutTexts"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/txtNotificationTime"
+            android:layout_width="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/BlackText"
+            android:layout_height="wrap_content"
+            android:text="الآن"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#CDBB86FC</color>
+    <color name="purple_500">#CD00A4CE</color>
+    <color name="purple_700">#CD00A4CE</color>
+    <color name="teal_200">#CB03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FFFFFF</color>
+    <color name="white">#121212</color>
+
+    <color name="cardColor">#121212</color>
+<!--    <color name="backgroundColor">#FCFCFC</color>-->
+<!--    <color name="backgroundColor">#FAFAFA</color>-->
+    <color name="backgroundColor">#212121</color>
+    <color name="backgroundColorForNotEnableItems">#6C6C6C</color>
+    <color name="backgroundColorForChatEditText">#6E6E6E</color>
+    <color name="inputBorder">#5D5D5D</color>
+    <color name="iconColor">#787878</color>
+    <color name="BlackText">#E2E2E2</color>
+    <color name="grayText">#787878</color>
+    <color name="greenText">#CB11E959</color>
+    <color name="redText">#CBFF1020</color>
+    <color name="grayIcons">#A6A6A6</color>
+    <color name="primaryColor">#CD00A4CE</color>
+    <color name="primaryColorWithAlpha">#4100A4CE</color>
+
+    <color name="primaryColorLight">#CCF5FF</color>
+    <color name="logoGrayBackground">#E0E0E0</color>
+
+</resources>
