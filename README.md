@@ -1,5 +1,5 @@
-# e7jiz_tabibak (احجز طبيبك)
-The Book Your Doctor application is: an application for booking appointments in doctors' clinics, as the application provides a service for booking an appointment in the doctor's clinic via phone, and the main goal of the application is to provide comfort to the patient in terms of the procedures for booking appointments inside clinics with doctors, and also to reduce the crowding of patients and the transmission of infection between patients, and also to provide clinic addresses using Google Maps and facilitate access to the most important doctors specializing in various fields by searching, filtering and other features.
+# Book Your Doctor (احجز طبيبك)
+Book Your Doctor (احجز طبيبك) application is: an application for booking appointments in doctors' clinics, as the application provides a service for booking an appointment in the doctor's clinic via phone, and the main goal of the application is to provide comfort to the patient in terms of the procedures for booking appointments inside clinics with doctors, and also to reduce the crowding of patients and the transmission of infection between patients, and also to provide clinic addresses using Google Maps and facilitate access to the most important doctors specializing in various fields by searching, filtering and other features.
 
 # App developing team:
 - Mohammed Alsadi 'Android Developer' (me)
